@@ -24,7 +24,7 @@ def radiation_scenario(stats):
 	if stats["radiation"] < 5:
 		typing("Your health is worsening.") #maybe add symptoms of radiation poisoning
 	elif stats["radiation"] >= 5:
-		typing("You manage to ")
+		typing("However, your powers mani")
 	clear()
 
 def enrichment_scenario1():
