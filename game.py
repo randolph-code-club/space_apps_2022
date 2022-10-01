@@ -9,7 +9,7 @@ def game():
     print("1) A Beginning")
     level_choice = ""
     while level_choice not in ["1"]:
-    level_choice = input("> ")
+        level_choice = input("> ")
     if level_choice == "1":
         level1.first_level()
     # if level_choice == "2":
