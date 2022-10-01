@@ -114,7 +114,7 @@ def startup():
             typing(explanation)
         elif answer == "stats":
             typing(f"""Your hero's current stats are:
-- radiation resistance: {radiation_resistance}
+- radiation resistance: {radiation_resistance}/10
 - ability to stay mentally healthy when lonely: {isolation_resistance}/10
 - ability to live off of few resources: {starvation_resistance}/10
 - ability to retain bodily health in low/no gravity: {body_retention}/10
