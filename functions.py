@@ -8,6 +8,7 @@ def typing(text):
 		sys.stdout.write(letter)
 		sys.stdout.flush()
 		time.sleep(random.random()*10/100)
+	sys.stdout.write("\n")
 
 def clear():
     os.system("clear")
