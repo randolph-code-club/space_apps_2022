@@ -55,20 +55,18 @@ def enrichment_scenario2(stats):
 	if stats["enrichment"] == 0:
 		typing("You are unable to find any form of entertainment for yourself with an enrichment level of 0, and become so bored that you go insane.")
 		lose()
-	if stats["enrichment"] == 10:
+	elif stats["enrichment"] == 10:
 		typing("You enjoy having nothing to with your enrichment level of 10, and you remain happy throughout your journey.")
-	if stats["enrichment"] <= 5:
+	elif stats["enrichment"] <= 5:
 		typing("You have an enrichment level of %s, and you can deal with boredom for a limited amount of time." % stats["enrichment"])
-	if stats["enrichment"] > 5:
+	elif stats["enrichment"] > 5:
 		typing("With an enrichment level of %s, you don't have a problem with having nothing to do." % stats["enrichment"])
 
 def isolation_scenario1(stats):
 	clear()
-	typing("You've been on this mission for years now. You haven't seen any of the people \
-	or things you care about for all of that time, and it's starting to seriously get to you.")
+	typing("You've been on this mission for years now. You haven't seen any of the people or things you care about for all of that time, and it's starting to seriously get to you.")
 	if stats["isolation"] == 0:
-		typing("Your loneliness resistance level of 0 causes you to lose all motivation. \
-		Even upon arrival to the red planet, all you can do is go home.")
+		typing("Your loneliness resistance level of 0 causes you to lose all motivation. Even upon arrival to the red planet, all you can do is go home.")
 		lose()
 	elif stats["isolation"] == 10:
 		typing("However, your loneliness resistance level of 10 seems to increase your determination to complete your mission.")
@@ -76,28 +74,20 @@ def isolation_scenario1(stats):
 		typing("Although you miss your loved ones on Earth, your loneliness resistance level of %s allows you to push through, \
 		with the knowledge that, if you succeed, you will be able to see them again." % stats["isolation"])
 	elif stats["isolation"] > 5:
-		typing("Your loneliness resistance level of %s allows you to enjoy yourself alone. \
-		That's not to say you don't miss your loved ones, but you are secure in your knowledge that \
-		you'll be able to see them again." % stats["isolation"])
+		typing("Your loneliness resistance level of %s allows you to enjoy yourself alone. That's not to say you don't miss your loved ones, but you are secure in your knowledge that you'll be able to see them again." % stats["isolation"])
 
 def isolation_scenario2(stats):
 	clear()
 	typing("As you look out into space, you realize just how far away you are from everything you've ever known.")
 	if stats["isolation"] == 0:
-		typing("Due to your loneliness resistance score of 0, \
-		his realization strikes you all at once, and you suddenly become very afraid of doing anything but going back home. \
-		Upon arrival on Mars, all you can do is go back home.")
+		typing("Due to your loneliness resistance score of 0, this realization strikes you all at once, and you suddenly become very afraid of doing anything but going back home. Upon arrival on Mars, all you can do is go back home.")
 		lose()
 	elif stats["isolation"] == 10:
-		typing("Due to your loneliness resistance score of 10, \
-		this realization only strengthens your desire to succeed so that you can return victorious. \
-		You are still able to appreciate the beauty of space.")
+		typing("Due to your loneliness resistance score of 10, this realization only strengthens your desire to succeed so that you can return victorious. You are still able to appreciate the beauty of space.")
 	elif stats["isolation"] <= 5:
-		typing("Your loneliness resistance score of %s causes your mind to remain troubled by this thought for the rest of your mission. \
-		You are all too aware of the risks you are taking to retreive your wallet." % stats["isolation"])
+		typing("Your loneliness resistance score of %s causes your mind to remain troubled by this thought for the rest of your mission. You are all too aware of the risks you are taking to retreive your wallet." % stats["isolation"])
 	elif stats["isolation"] > 5:
-		typing("Your loneliness resistance score of %s allows you to aknowledge this realization without the need to let it \
-		occupy your whole mind." % stats["isolation"])
+		typing("Your loneliness resistance score of %s allows you to aknowledge this realization without the need to let it occupy your whole mind." % stats["isolation"])
 
 def starvation_scenario1(stats):
 	clear()
@@ -135,7 +125,7 @@ def lose():
    `\ \ \   \ \ \_\ \ \ \_\ \   \ \ \L\ \\ \ \_\ \/\ \L\ \ \ \L\ \__  __  __ 
      \ \_\   \ \_____\ \_____\   \ \____/ \ \_____\ `\____\ \____/\_\/\_\/\_\
       \/_/    \/_____/\/_____/    \/___/   \/_____/\/_____/\/___/\/_/\/_/\/_/
-	\n''')
+	''')
 	typing("Press enter to continue.")
 	input("> ")
 
@@ -149,6 +139,6 @@ def win():
     | $$   | $$  | $$| $$  | $$      | $$$/ \  $$$  | $$  | $$\  $$$            
     | $$   |  $$$$$$/|  $$$$$$/      | $$/   \  $$ /$$$$$$| $$ \  $$ /$$ /$$ /$$
     |__/    \______/  \______/       |__/     \__/|______/|__/  \__/|__/|__/|__/
-	\n''')
+	''')
 	typing("Press enter to continue.")
 	input("> ")

@@ -17,8 +17,10 @@ def game(stats):
         level1.first_level(stats)
     if level_choice == "2":
         #     level2.second_level()
+        pass
     if level_choice == "3":
         #     level3.third_level()
+        pass
 
 if __name__ == "__main__":
     game()
