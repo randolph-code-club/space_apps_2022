@@ -7,12 +7,12 @@ from game import game
 def startup():
     #Introduction
     clear()
-    typing("Welcome to BIOLOGICAL HERO!\n")
+    typing("Welcome to BIOLOGICAL HERO!")
     name_choosing = "n"
     while name_choosing == "n":
-        typing("What would you like to name your character?\n")
+        typing("What would you like to name your character?")
         name = input("> ")
-        typing("Would you like to name your character: %s? (y/n)\n" % name)
+        typing("Would you like to name your character: %s? (y/n)" % name)
         name_conformation = ""
         while name_conformation not in ["y", "n"]:
             name_conformation = input("> ")
