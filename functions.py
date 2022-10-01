@@ -11,4 +11,9 @@ def typing(text):
 	sys.stdout.write("\n")
 
 def clear():
-    os.system("clear")
+	if sys.platform.startswith("linux"):
+		os.system("clear")
+	elif sys.platform.startswith("win32"):
+		os.system("cls")
+	elif sys.platform.startswith("darwin"):
+		os.system("clear")

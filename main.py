@@ -1,4 +1,3 @@
-from turtle import title
 from functions import clear
 from functions import typing
 import char_creation
