@@ -2,6 +2,7 @@ from tracemalloc import start
 from functions import clear
 from functions import typing
 import time
+from game import game
 
 def startup():
     #Introduction
@@ -11,7 +12,6 @@ def startup():
     while name_choosing == "n":
         typing("What would you like to name your character?\n")
         name = input("> ")
-        clear()
         typing("Would you like to name your character: %s? (y/n)\n" % name)
         name_conformation = ""
         while name_conformation not in ["y", "n"]:
@@ -97,6 +97,7 @@ def startup():
                         creating = False
                         typing("Your stats have been set.")
                         time.sleep(2)
+                        creating = False
                         break
                     elif yesNo == "n":
                         typing("Ok, resetting.")
@@ -130,6 +131,6 @@ def startup():
             ease_of_enrichment = 0
         else:
             typing("I didn't get that, please try again.")
-
+    return {"radiation":radiation_resistance, "isolation":isolation_resistance, "starvation":starvation_resistance, "gravity":body_retention, "enrichment":ease_of_enrichment}
 if __name__ == "__main__":
     startup()
