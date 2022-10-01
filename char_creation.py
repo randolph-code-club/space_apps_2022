@@ -44,7 +44,7 @@ def startup():
     while creating:
         typing("You have %s points left to spend.\n" % points)
         typing("What stat would you like to alter? The stats are:")
-        print("- 'radiation'\n- 'isolation'\n- 'starvation'\n- 'gravity'\n- 'enrichment'")
+        print(f"- 'radiation'{radiation_resistance}/10\n- 'isolation'{isolation_resistance}/10\n- 'starvation'{starvation_resistance}/10\n- 'gravity'{body_retention}/10\n- 'enrichment'{ease_of_enrichment}/10")
         typing("Type \"help\" to see the explanation again or \"reset\" to reset your stats.")
         answer = input("> ").lower()
         if answer in ("radiation", "isolation", "starvation", "gravity", "enrichment"):

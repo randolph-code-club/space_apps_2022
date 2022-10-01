@@ -6,7 +6,7 @@ from functions import starvation_scenario1, starvation_scenario2, enrichment_sce
 
 
 def first_level(stats):
-    possible_levels = [radiation_scenario, isolation_scenario1, isolation_scenario2, \
+    possible_levels = [radiation_scenario, isolation_scenario1, isolation_scenario2,
     starvation_scenario1, starvation_scenario2, enrichment_scenario1, enrichment_scenario2]
     levels = []
     for i in range(3):
@@ -22,14 +22,47 @@ def first_level(stats):
     typing("A few weeks later, you board the rocket to embark on the mission Journier 4 1/2.")
     time.sleep(2)
     clear()
-    typing("3")
+    print('''
+  ____  
+ |___ \ 
+   __) |
+  |__ < 
+  ___) |
+ |____/     
+    ''')
     time.sleep(1)
-    typing("2")
+    clear()
+    print('''
+  ___  
+ |__ \ 
+    ) |
+   / / 
+  / /_ 
+ |____|    
+    ''')
     time.sleep(1)
-    typing("1")
+    clear()
+    print('''
+  __ 
+ /_ |
+  | |
+  | |
+  | |
+  |_|    
+    ''')
     time.sleep(1)
-    typing("Ignition!")
-    time.sleep(1)
+    clear()
+    print(r'''
+ ___  ________  ________   ___  _________  ___  ________  ________      
+|\  \|\   ____\|\   ___  \|\  \|\___   ___\\  \|\   __  \|\   ___  \    
+\ \  \ \  \___|\ \  \\ \  \ \  \|___ \  \_\ \  \ \  \|\  \ \  \\ \  \   
+ \ \  \ \  \  __\ \  \\ \  \ \  \   \ \  \ \ \  \ \  \\\  \ \  \\ \  \  
+  \ \  \ \  \|\  \ \  \\ \  \ \  \   \ \  \ \ \  \ \  \\\  \ \  \\ \  \ 
+   \ \__\ \_______\ \__\\ \__\ \__\   \ \__\ \ \__\ \_______\ \__\\ \__\
+    \|__|\|_______|\|__| \|__|\|__|    \|__|  \|__|\|_______|\|__| \|__|
+    ''')
+    time.sleep(2)
+    clear()
     typing("Your rocket lifts from the ground, and a few minutes later, you are in orbit around Earth.")
     typing("Fast forward a little while, you are on your way to Mars.")
     time.sleep(2)
