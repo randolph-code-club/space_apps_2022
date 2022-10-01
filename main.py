@@ -2,9 +2,11 @@ from functions import clear
 from functions import typing
 import char_creation
 import time
+from game import game
 
-clear()
-print(r'''
+def main():
+    clear()
+    print(r'''
  ____                 ___                                        ___       __  __                         
 /\  _`\    __        /\_ \                   __                 /\_ \     /\ \/\ \                        
 \ \ \L\ \ /\_\    ___\//\ \     ___      __ /\_\    ___     __  \//\ \    \ \ \_\ \     __   _ __   ___   
@@ -14,28 +16,33 @@ print(r'''
     \/___/   \/_/\/___/ \/____/\/___/  \/___L\ \/_/\/____/\/__/\/_/\/____/    \/_/\/_/\/____/ \/_/ \/___/ 
                                          /\____/                                                          
                                          \_/__/    ''')
-time.sleep(1)
-print("\n")
-print("1) Play")
-print("2) Help")
+    time.sleep(1)
+    print("\n")
+    print("1) Play")
+    # print("2) Help")
 
-title_choice = ""
-while title_choice not in ["1", "2", "help", "play"]:
-    title_choice = input("\n> ").lower()
-if title_choice == "1" or "play":
-    clear()
-    char_creation.startup()
-elif title_choice == "2" or "help":
-    clear()
-    print("Help TBD")
+    title_choice = ""
+    while title_choice not in ["1", "play"]:
+        title_choice = input("\n> ").lower()
+    if title_choice == "1" or "play":
+        clear()
+        stats = char_creation.startup()
+        game(stats)
+    elif title_choice == "2" or "help":
+        clear()
+        print("Help TBD")
 
-# take_input = True
-# while take_input:
-#     input = input("ask something").lower()
-#     if input in ["help"] or input in [i for i in range(1,2)]: #list of commands and list of acceptable integers
-#         #vvv Place commands here vvv
-#         if input in ["help", 2]:
-#             print("rules of game")
-        
-#     else:
-#         print("I didn't get that, please try again.")
+    # take_input = True
+    # while take_input:
+    #     input = input("ask something").lower()
+    #     if input in ["help"] or input in [i for i in range(1,2)]: #list of commands and list of acceptable integers
+    #         #vvv Place commands here vvv
+    #         if input in ["help", 2]:
+    #             print("rules of game")
+            
+    #     else:
+    #         print("I didn't get that, please try again.")
+
+if __name__ == '__main__':
+    while True:
+        main()

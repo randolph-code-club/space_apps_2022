@@ -2,16 +2,16 @@ from tracemalloc import start
 from functions import clear
 from functions import typing
 import time
+from game import game
 
 def startup():
     #Introduction
     clear()
-    typing("Welcome to INSERT GAME TITLE HERE!\n")
+    typing("Welcome to BIOLOGICAL HERO!\n")
     name_choosing = "n"
     while name_choosing == "n":
         typing("What would you like to name your character?\n")
         name = input("> ")
-        clear()
         typing("Would you like to name your character: %s? (y/n)\n" % name)
         name_conformation = ""
         while name_conformation not in ["y", "n"]:
@@ -45,26 +45,26 @@ def startup():
         typing("You have %s points left to spend.\n" % points)
         typing("What stat would you like to alter? The stats are:")
         print("- 'radiation'\n- 'isolation'\n- 'starvation'\n- 'gravity'\n- 'enrichment'")
-        typing("Type \"help\" to see the explanation again.")
+        typing("Type \"help\" to see the explanation again or \"reset\" to reset your stats.")
         answer = input("> ").lower()
         if answer in ("radiation", "isolation", "starvation", "gravity", "enrichment"):
             while True:
                 try:
                     typing("How many points would you like to modify this stat by?")
                     modification = int(input("> "))
-                    if modification <= points and modification <= 10:
-                        if answer == "radiation" and radiation_resistance + modification >= 0:
+                    if modification <= points:
+                        if answer == "radiation" and 10 >= radiation_resistance + modification >= 0:
                             break
-                        elif answer == "isolation" and isolation_resistance + modification >= 0:
+                        elif answer == "isolation" and 10 >= isolation_resistance + modification >= 0:
                             break
-                        elif answer == "starvation" and starvation_resistance + modification >= 0:
+                        elif answer == "starvation" and 10 >= starvation_resistance + modification >= 0:
                             break
-                        elif answer == "gravity" and body_retention + modification >= 0:
+                        elif answer == "gravity" and 10 >= body_retention + modification >= 0:
                             break
-                        elif answer == "enrichment" and ease_of_enrichment + modification >= 0:
+                        elif answer == "enrichment" and 10 >= ease_of_enrichment + modification >= 0:
                             break
-                    elif modification > points and modification <= 10:
-                        typing("You don't have that many points left.")
+                    elif modification > points:
+                        typing("You don't have enough points left.")
                     elif modification > 10:
                         typing("Each score can be 10 at most.")
                 except ValueError:
@@ -92,11 +92,12 @@ def startup():
                 """)
                 typing("Are these the stats you want? Please answer 'y' or 'n'.")
                 while True:
-                    yesNo = input("> ").lower()
+                    yesNo = input("> ").lower().strip()
                     if yesNo == "y":
                         creating = False
                         typing("Your stats have been set.")
-                        time.sleep(1)
+                        time.sleep(2)
+                        creating = False
                         break
                     elif yesNo == "n":
                         typing("Ok, resetting.")
@@ -114,14 +115,22 @@ def startup():
             typing(explanation)
         elif answer == "stats":
             typing(f"""Your hero's current stats are:
-- radiation resistance: {radiation_resistance}
+- radiation resistance: {radiation_resistance}/10
 - ability to stay mentally healthy when lonely: {isolation_resistance}/10
 - ability to live off of few resources: {starvation_resistance}/10
 - ability to retain bodily health in low/no gravity: {body_retention}/10
 - ease of enrichment in otherwise harsh environments: {ease_of_enrichment}/10
             """)
+        elif answer == "reset":
+            typing("Ok, resetting.")
+            points = 25
+            radiation_resistance = 0
+            isolation_resistance = 0
+            starvation_resistance = 0
+            body_retention = 0
+            ease_of_enrichment = 0
         else:
             typing("I didn't get that, please try again.")
-
+    return {"radiation":radiation_resistance, "isolation":isolation_resistance, "starvation":starvation_resistance, "gravity":body_retention, "enrichment":ease_of_enrichment}
 if __name__ == "__main__":
     startup()
