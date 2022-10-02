@@ -87,6 +87,15 @@ def startup():
                     body_retention += 1
                 elif choice == 5:
                     ease_of_enrichment += 1
+            print(f"""Your character's stats are:
+- radiation resistance: {radiation_resistance}
+- ability to stay mentally healthy when lonely: {isolation_resistance}
+- ability to live off of few resources: {starvation_resistance}
+- ability to retain bodily health in low/no gravity: {body_retention}
+- ease of enrichment in otherwise harsh environments: {ease_of_enrichment}""")
+            typing("Your stats have been set.")
+            creating = False
+            break
         else:
             while True:
                 try:
