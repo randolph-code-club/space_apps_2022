@@ -16,6 +16,8 @@ The game interprets these hazards as these 5 biological superpowers:
 - ease of happiness in otherwise harsh environments
 Once your character has been created, you follow them on a mission to Mars with three chapters: on the way, there, and back again.
 
+<img width="872" alt="image" src="https://user-images.githubusercontent.com/34243402/193467362-8e54bd0b-1d93-4d05-9983-c271bbb5afce.png">
+
 
 ## Libraries Used
 
