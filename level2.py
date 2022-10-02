@@ -17,8 +17,9 @@ def second_level(stats):
     earth_date = None
 
     api_key = os.environ["NASA_API_KEY"]
+    weather_data_status = 418
 
-    while not image_url:
+    while not image_url and weather_data_status is not 200:
         sol = random.randint(1, 3423)
         image_response = requests.get(f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={api_key}")
         image_data = image_response.json()
@@ -26,14 +27,10 @@ def second_level(stats):
             image_url = image_data["photos"][0]["img_src"]
             earth_date = image_data["photos"][0]["earth_date"]
             rover_name = image_data["photos"][0]["rover"]["name"]
-
-    # image = DrawImage.from_url(image_url, (100, 30))
-    # image.draw_image()
-
-    weather_response = requests.get(f"https://api.maas2.apollorion.com/{sol}")
-    weather_data = weather_response.json()
+            weather_response = requests.get(f"https://api.maas2.apollorion.com/{sol}")
+            weather_data = weather_response.json()
+            weather_data_status = weather_data["status"]
     
-
     typing("You have selected level 2. Prepare to begin your Martian expedition.")
     time.sleep(2)
     clear()
@@ -57,8 +54,10 @@ def second_level(stats):
 
     image = DrawImage.from_url(image_url, (100, 30))
     image.draw_image()
-
-    typing("Pressure: {} mb".format(weather_data["pressure"]))
+    try:
+        typing("Pressure: {} mb".format(weather_data["pressure"]))
+    except KeyError:
+        pass
     typing("UV Index: {}".format(weather_data["local_uv_irradiance_index"]))
     typing("Max Temp: {}°C".format(weather_data["max_temp"]))
     typing("Min Temp: {}°C".format(weather_data["min_temp"]))

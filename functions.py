@@ -25,6 +25,19 @@ def lost_one():
 def count_lost():
 	return number_lost
 
+level1_completed = False
+level2_completed = False
+def is_level1_completed():
+	return True if level1_completed else False
+def is_level2_completed():
+	return True if level2_completed else False
+def level2_got_completed():
+	global level2_completed
+	level2_completed = True
+def level1_got_completed():
+	global level1_completed
+	level1_completed = True
+
 def radiation_scenario(stats):
 	clear()
 	typing("Over the time you've been in space thus far, you've been exposed to enough radiation to notice bodily changes.")
