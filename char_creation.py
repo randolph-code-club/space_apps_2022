@@ -69,7 +69,7 @@ def startup():
             body_retention = 0
             ease_of_enrichment = 0
         elif answer == "GENERATE":
-            points = 25
+            points = 0
             radiation_resistance = 0
             isolation_resistance = 0
             starvation_resistance = 0
