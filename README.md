@@ -16,8 +16,23 @@ The game interprets these hazards as these 5 biological superpowers:
 - ease of happiness in otherwise harsh environments
 Once your character has been created, you follow them on a mission to Mars with three chapters: on the way, there, and back again.
 
+During character creation, you will have a pool of 25 points to spread throughout the 5 stats, and each stat must stay between 0 and 10. 
+
+screenshot
+
+After that, you get to follow your character's journey as they head towards Mars...
+
+gif of countdown to ignition
+
+...then arrive on Mars...
+
+screenshot of an image being displayed
+
 <img width="872" alt="image" src="https://user-images.githubusercontent.com/34243402/193467362-8e54bd0b-1d93-4d05-9983-c271bbb5afce.png">
 
+...and finally return to Earth.
+
+screenshot of "you win" screen
 
 ## Libraries Used
 

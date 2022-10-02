@@ -61,7 +61,7 @@ def enrichment_scenario1(stats):
 		typing("Due to your ease of enrichment level of 0, you are claustrophobic and cannot stand the tight space.")
 		lose()
 	elif stats["enrichment"] == 10:
-		typing("Your ease of enrichment level of 10 causes you be claustrophilic.")
+		typing("Your ease of enrichment level of 10 causes you be claustrophilic. That's good!")
 	elif stats["enrichment"] <= 5:
 		typing("With an ease of enrichment level of %s, you are extremely uncomfortable in the small space and become worried you won't make it." % stats["enrichment"])
 		lost_one()
@@ -152,21 +152,19 @@ def lose():
    `\ \ \   \ \ \_\ \ \ \_\ \   \ \ \L\ \\ \ \_\ \/\ \L\ \ \ \L\ \__  __  __ 
      \ \_\   \ \_____\ \_____\   \ \____/ \ \_____\ `\____\ \____/\_\/\_\/\_\
       \/_/    \/_____/\/_____/    \/___/   \/_____/\/_____/\/___/\/_/\/_/\/_/ 
-	'''
+	''')
 	typing("Press enter to continue.")
 	input("> ")
 	raise ZeroDivisionError
 
 def win():
 	print(r'''
- /$$     /$$ /$$$$$$  /$$   /$$       /$$      /$$ /$$$$$$ /$$   /$$ /$$ /$$ /$$
-|  $$   /$$//$$__  $$| $$  | $$      | $$  /$ | $$|_  $$_/| $$$ | $$| $$| $$| $$
- \  $$ /$$/| $$  \ $$| $$  | $$      | $$ /$$$| $$  | $$  | $$$$| $$| $$| $$| $$
-  \  $$$$/ | $$  | $$| $$  | $$      | $$/$$ $$ $$  | $$  | $$ $$ $$| $$| $$| $$
-   \  $$/  | $$  | $$| $$  | $$      | $$$$_  $$$$  | $$  | $$  $$$$|__/|__/|__/
-    | $$   | $$  | $$| $$  | $$      | $$$/ \  $$$  | $$  | $$\  $$$            
-    | $$   |  $$$$$$/|  $$$$$$/      | $$/   \  $$ /$$$$$$| $$ \  $$ /$$ /$$ /$$
-    |__/    \______/  \______/       |__/     \__/|______/|__/  \__/|__/|__/|__/
+dP    dP  .88888.  dP     dP    .d88888b  dP     dP  888888ba  dP     dP dP dP     dP  88888888b 888888ba  dP dP dP 
+Y8.  .8P d8'   `8b 88     88    88.    "' 88     88  88    `8b 88     88 88 88     88  88        88    `8b 88 88 88 
+ Y8aa8P  88     88 88     88    `Y88888b. 88     88 a88aaaa8P' 88    .8P 88 88    .8P a88aaaa    88     88 88 88 88 
+   88    88     88 88     88          `8b 88     88  88   `8b. 88    d8' 88 88    d8'  88        88     88 dP dP dP 
+   88    Y8.   .8P Y8.   .8P    d8'   .8P Y8.   .8P  88     88 88  .d8P  88 88  .d8P   88        88    .8P          
+   dP     `8888P'  `Y88888P'     Y88888P  `Y88888P'  dP     dP 888888'   dP 888888'    88888888P 8888888P  oo oo oo 
 	''')
 	typing("Press enter to continue.")
 	input("> ")
