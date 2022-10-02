@@ -2,8 +2,7 @@ import os
 import requests
 from image import DrawImage
 import random
-from functions import clear
-from functions import typing
+from functions import clear, typing, lose
 import time
 
 def second_level(stats):
@@ -70,7 +69,14 @@ def second_level(stats):
 
     typing("After a long time in zero gravity, your body has suffered detremental effects.")
     if stats["gravity"] == 0:
-        pass #WizardGrayFire start here
+        typing("Due to your body retention score of 0, your muscles have seriously declined in functionality. You fear that you may not be able to lift your wallet.") #~~you didn't understand the gravity of the situation until it was too late~~
+        lose()
+    elif stats["gravity"] == 10:
+        typing("Due to your body retention score of 10, your superpowers have kept your muscles strong and your bones sturdy, dispite the lack of excercise equipment due to budget cuts.")
+    elif stats["gravity"] <= 5:
+        typing("You can still move normally after some hassle, but every part of you and every object you encounter seems unreasonably heavy for what it is.")
+    elif stats["gravity"] > 5:
+        typing("You're a bit wobbly at first, but after a time you manage to get reaquainted with gravity and start moving normally again.")
 
 if __name__ == "__main__":
     second_level()
