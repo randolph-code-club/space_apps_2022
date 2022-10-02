@@ -19,7 +19,6 @@ Once your character has been created, you follow them on a mission to Mars with 
 
 ## Libraries Used
 
-We used:
 - [requests](https://pypi.org/project/requests/)
 - [terminal-img](https://pypi.org/project/terminal-img/)
 - [inquirer](https://pypi.org/project/inquirer/)
@@ -27,8 +26,10 @@ We used:
 
 ## APIs Used
 
-We used:
-- [Mars Rover Photos]()
+- [Mars Rover Photos](https://github.com/chrisccerami/mars-photo-api)
 - [MAAS2 API](https://maas2.apollorion.com/)
 
 ## Research Sources
+
+- [NASA's 5 Hazards of Human Spaceflight](https://www.nasa.gov/hrp/5-hazards-of-human-spaceflight)
+- [The World Health Organization's Ultraviolet Radiation Index](https://www.who.int/news-room/questions-and-answers/item/radiation-the-ultraviolet-(uv)-index)

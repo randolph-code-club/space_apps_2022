@@ -18,7 +18,7 @@ def first_level(stats):
     time.sleep(2)
     clear()
     typing("On your previous mission to Mars, Journier 4, you dropped your wallet on the Martian surface and left it behind.")
-    typing("You receive a call from the space organization SpaceY asking you to go on an expedition to Mars to retrieve the wallet.")
+    typing("You receive a call from the NASA asking you to go on an expedition to Mars to retrieve your wallet.")
     typing("You are told that because of your biological advantages, you will be the only person on the mission. Nobody else is going due to budget cuts.")
     typing("A few weeks later, you board the rocket to embark on the mission Journier 4½.")
     time.sleep(2)
