@@ -7,14 +7,20 @@ from functions import typing
 import time
 
 def second_level():
+
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
     clear()
 
     image_url = None
     earth_date = None
 
+    api_key = os.environ["NASA_API_KEY"]
+
     while not image_url:
         sol = random.randint(1, 3423)
-        api_key = os.environ["NASA_API_KEY"]
         image_response = requests.get(f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={api_key}")
         image_data = image_response.json()
         if len(image_data["photos"]) > 0:

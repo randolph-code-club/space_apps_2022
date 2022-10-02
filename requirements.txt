@@ -1,3 +1,4 @@
 requests
 terminal-img
 inquirer
+python-dotenv
