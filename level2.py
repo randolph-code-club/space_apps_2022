@@ -6,7 +6,7 @@ from functions import clear
 from functions import typing
 import time
 
-def second_level():
+def second_level(stats):
 
     from dotenv import load_dotenv
 
@@ -68,7 +68,9 @@ def second_level():
     input("> ")
     clear()
 
-    typing("After a long time in zero gravity, your body ")
+    typing("After a long time in zero gravity, your body has suffered detremental effects.")
+    if stats["gravity"] == 0:
+        pass #WizardGrayFire start here
 
 if __name__ == "__main__":
     second_level()
