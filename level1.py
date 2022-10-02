@@ -71,6 +71,7 @@ def first_level(stats):
         print("Press enter to continue.")
         input("> ")
     win()
+    return possible_levels - levels
 
 if __name__ == "__main__":
     first_level()
