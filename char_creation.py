@@ -94,6 +94,8 @@ def startup():
 - ability to retain bodily health in low/no gravity: {body_retention}
 - ease of enrichment in otherwise harsh environments: {ease_of_enrichment}""")
             typing("Your stats have been set.")
+            typing("Press Enter to continue.")
+            input("> ")
             creating = False
             break
         else:

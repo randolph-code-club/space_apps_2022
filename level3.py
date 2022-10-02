@@ -1,5 +1,5 @@
 import random
-from functions import clear, typing, lose, win
+from functions import clear, typing, lose, win_entire
 from functions import count_lost
 import time
 
@@ -23,7 +23,7 @@ def third_level(stats, remaining_scenarios):
     typing("You splash down into the Pacific Ocean.")
     typing("You have made it home with your wallet.")
     typing("Although I think you may have left your keys behind on this trip...")
-    win()
+    win_entire()
 
 if __name__ == "__main__":
     third_level()
