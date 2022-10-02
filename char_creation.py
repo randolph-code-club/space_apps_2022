@@ -108,16 +108,15 @@ def startup():
     - ability to retain bodily health in low/no gravity: {body_retention}
     - ease of enrichment in otherwise harsh environments: {ease_of_enrichment}
                     """)
-                typing("Are these the stats you want? Please answer 'y' or 'n'.")
                 while True:
-                    yesNo = input("> ").lower().strip()
-                    if yesNo == "y":
+                    yesNo = inquirer.prompt([inquirer.Confirm("confirm", message="Are these the stats you want?", default=True)])
+                    if yesNo["confirm"]:
                         creating = False
                         typing("Your stats have been set.")
                         time.sleep(2)
                         creating = False
                         break
-                    elif yesNo == "n":
+                    else:
                         typing("Ok, resetting.")
                         points = 25
                         radiation_resistance = 0
@@ -126,8 +125,6 @@ def startup():
                         body_retention = 0
                         ease_of_enrichment = 0
                         break
-                    else:
-                        typing("Please try again.")
                 
     return {"radiation":radiation_resistance, "isolation":isolation_resistance, "starvation":starvation_resistance, "gravity":body_retention, "enrichment":ease_of_enrichment}
 if __name__ == "__main__":
