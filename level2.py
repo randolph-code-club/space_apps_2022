@@ -34,14 +34,19 @@ def second_level():
     weather_data = weather_response.json()
     
 
-    typing("You have selected level 2. Prepare to begin your search.")
+    typing("You have selected level 2. Prepare to begin your Martian expedition.")
     time.sleep(2)
     clear()
-    typing(f"""It is {earth_date} on Earth, and you have just landed on Mars.
-You have made it far already, but now it is time to achieve the aim of your mission.
-You must locate the wallet.""")
+    typing("After ages of travelling, you finally arrive at Mars.")
+    typing("You engage your lander and descend to the surface.")
+    typing(f"You have just landed on Mars. It is currently {earth_date} on Earth.")
+    time.sleep(2)
+    clear()
+    typing("You have made it far already, but now it is time to achieve the aim of your mission:")
     time.sleep(1)
-    typing('You check the temperature, air pressure, and UV radiation index.')
+    typing("You must locate the wallet.")
+    time.sleep(1)
+    typing("You check the temperature, air pressure, and UV radiation index.")
     print("Downloading", end = "")
     time.sleep(1)
     print(".", end = "")
@@ -57,6 +62,7 @@ You must locate the wallet.""")
     typing("UV Index: {}".format(weather_data["local_uv_irradiance_index"]))
     typing("Max Temp: {}".format(weather_data["max_temp"]))
     typing("Min Temp: {}".format(weather_data["min_temp"]))
+    time.sleep(2)
 
 if __name__ == "__main__":
     second_level()
