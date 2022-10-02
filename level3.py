@@ -1,7 +1,6 @@
 import random
 from functions import clear, typing, lose, win
-from functions import radiation_scenario, isolation_scenario1, isolation_scenario2, enrichment_scenario1, enrichment_scenario2
-from functions import starvation_scenario1, starvation_scenario2
+from functions import count_lost
 import time
 
 def third_level(stats, remaining_scenarios):
@@ -14,6 +13,8 @@ def third_level(stats, remaining_scenarios):
     time.sleep(1)
     for level in scenarios:
         level(stats)
+        if count_lost() >= 4:
+            lose()
         print("Press enter to continue.")
         input("> ")
     clear()

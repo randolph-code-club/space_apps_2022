@@ -19,7 +19,6 @@ def main():
     time.sleep(1)
     print("\n")
     print("1) Play")
-    # print("2) Help")
 
     title_choice = ""
     while title_choice not in ["1", "play"]:
@@ -28,7 +27,9 @@ def main():
         clear()
         stats = char_creation.startup()
         while True:
+            print("before game")
             game(stats)
+            print("after game")
     elif title_choice == "2" or "help":
         clear()
         print("Help TBD")
@@ -48,5 +49,5 @@ if __name__ == '__main__':
     while True:
         try:
             main()
-        except:
+        except ZeroDivisionError:
             pass # you lost

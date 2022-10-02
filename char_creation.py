@@ -40,7 +40,7 @@ def startup():
     """ % name
     typing(explanation)
     while creating:
-        typing("You have %s points left to spend.\n" % points)
+        typing("You have %s point(s) left to spend.\n" % points)
         #this line
         questions = [
             inquirer.List("stat", 

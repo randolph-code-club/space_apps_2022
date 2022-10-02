@@ -2,7 +2,7 @@ import os
 import requests
 from image import DrawImage
 import random
-from functions import clear, typing, lose, win
+from functions import clear, typing, lose, win, lost_one, count_lost
 import time
 
 def second_level(stats):
@@ -75,11 +75,14 @@ def second_level(stats):
         typing("Due to your body retention score of 10, your superpowers have kept your muscles strong and your bones sturdy, dispite the lack of excercise equipment due to budget cuts.")
     elif stats["gravity"] <= 5:
         typing(f"Your body retention score of {stats['gravity']} lets you still move normally after some hassle, but every part of you and every object you encounter seems unreasonably heavy for what it is.")
+        lost_one()
     elif stats["gravity"] > 5:
         typing(f"Your body retention score of {stats['gravity']} means you're a bit wobbly at first, but after a time you manage to get reaquainted with gravity and start moving normally again.")
     time.sleep(1)
     typing("Press Enter to continue")
     input("> ")
+    if count_lost() >= 4:
+        lose()
     typing("You decide to exit your spacecraft and walk on the Martian surface to find your wallet.")
     if weather_data["local_uv_irradiance_index"] == "Low":
         typing("The UV Index is {}, so you will be fine.".format(weather_data["local_uv_irradiance_index"]))
@@ -96,9 +99,12 @@ def second_level(stats):
         elif stats["radiation"] == 10:
             typing("Your radiation resistance level of 10 causes you to not even be affected by this.")
         elif stats["radiation"] <= 5:
-            typing("Your radiation resistance level of %s allows you to not be bothered by this." % stats["radiation"])
-        elif stats["radiation"] > 5:
             typing("Your radiation resistance level of %s causes you to feel significanty hotter than usual." % stats["radiation"])
+            lost_one()
+        elif stats["radiation"] > 5:
+            typing("Your radiation resistance level of %s allows you to not be bothered by this, ." % stats["radiation"])
+    if count_lost() >= 4:
+        lose()
     time.sleep(2)
     clear()
     typing("You walk across the surface for hours, trying to remember where you saw your wallet last.")

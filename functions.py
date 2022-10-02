@@ -18,6 +18,13 @@ def clear():
 	elif sys.platform.startswith("darwin"):
 		os.system("clear")
 
+number_lost = 0
+def lost_one():
+	global number_lost
+	number_lost += 1
+def count_lost():
+	return number_lost
+
 def radiation_scenario(stats):
 	clear()
 	typing("Over the time you've been in space thus far, you've been exposed to enough radiation to notice bodily changes.")
@@ -30,7 +37,7 @@ def radiation_scenario(stats):
 		typing("Because of your radiation resistance level of 10, not only do your powers reverse the effects of the radiation, they strengthen because of it.")
 	elif stats["radiation"] <= 5:
 		typing("You have a radiation resistance level of %s, so your health is worsening." % stats["radiation"]) #maybe add symptoms of radiation poisoning
-		# add fail point
+		lost_one()
 	elif stats["radiation"] > 5:
 		typing("However, with your radiation resistance level of %s, your powers manifest to reverse the effects of this radiation." % stats["radiation"])
 
@@ -44,8 +51,9 @@ def enrichment_scenario1(stats):
 		typing("Your ease of enrichment level of 10 causes you be claustrophilic.")
 	elif stats["enrichment"] <= 5:
 		typing("With an ease of enrichment level of %s, you are extremely uncomfortable in the small space and become worried you won't make it." % stats["enrichment"])
+		lost_one()
 	elif stats["enrichment"] > 5:
-		typing("Because your ease of enrichment level is %s, you don't mind the cramped space and are able to deal with it well.")
+		typing("Because your ease of enrichment level is %s, you don't mind the cramped space and are able to deal with it well." % stats["enrichment"])
 
 
 def enrichment_scenario2(stats):
@@ -58,21 +66,26 @@ def enrichment_scenario2(stats):
 		typing("You enjoy having nothing to with your enrichment level of 10, and you remain happy throughout your journey.")
 	elif stats["enrichment"] <= 5:
 		typing("You have an enrichment level of %s, and you can deal with boredom for a limited amount of time." % stats["enrichment"])
+		lost_one()
 	elif stats["enrichment"] > 5:
 		typing("With an enrichment level of %s, you don't have a problem with having nothing to do." % stats["enrichment"])
 
 def isolation_scenario1(stats):
 	clear()
-	typing("You've been on this mission for years now. You haven't seen any of the people or things you care about for all of that time, and it's starting to seriously get to you.")
+	typing("""You've been on this mission for years now. 
+	You haven't seen any of the people or things you care about for all of that time, and it's starting to seriously get to you.""")
 	if stats["isolation"] == 0:
-		typing("Your loneliness resistance level of 0 causes you to lose all motivation. Even upon arrival to the red planet, all you can do is go home.")
+		typing("""Your loneliness resistance level of 0 causes you to lose all motivation. 
+		Even upon arrival to the red planet, all you can do is go home.""")
 		lose()
 	elif stats["isolation"] == 10:
 		typing("However, your loneliness resistance level of 10 seems to increase your determination to complete your mission.")
 	elif stats["isolation"] <= 5:
 		typing("Although you miss your loved ones on Earth, your loneliness resistance level of %s allows you to push through, with the knowledge that, if you succeed, you will be able to see them again." % stats["isolation"])
+		lost_one()
 	elif stats["isolation"] > 5:
-		typing("Your loneliness resistance level of %s allows you to enjoy yourself alone. That's not to say you don't miss your loved ones, but you are secure in your knowledge that you'll be able to see them again." % stats["isolation"])
+		typing("""Your loneliness resistance level of %s allows you to enjoy yourself alone. 
+		That's not to say you don't miss your loved ones, but you are secure in your knowledge that you'll be able to see them again.""" % stats["isolation"])
 
 def isolation_scenario2(stats):
 	clear()
@@ -83,9 +96,10 @@ def isolation_scenario2(stats):
 	elif stats["isolation"] == 10:
 		typing("Due to your loneliness resistance score of 10, this realization only strengthens your desire to succeed so that you can return victorious. You are still able to appreciate the beauty of space.")
 	elif stats["isolation"] <= 5:
-		typing("Your loneliness resistance score of %s causes your mind to remain troubled by this thought for the rest of your mission. You are all too aware of the risks you are taking to retreive your wallet." % stats["isolation"])
+		typing("Your loneliness resistance score of %s causes your mind to remain troubled by this thought for the rest of your mission. You are all too aware of the risks you are taking to retrieve your wallet." % stats["isolation"])
+		lost_one()
 	elif stats["isolation"] > 5:
-		typing("Your loneliness resistance score of %s allows you to aknowledge this realization without the need to let it occupy your whole mind." % stats["isolation"])
+		typing("Your loneliness resistance score of %s allows you to acknowledge this realization without the need to let it occupy your whole mind." % stats["isolation"])
 
 def starvation_scenario1(stats):
 	clear()
@@ -97,6 +111,7 @@ def starvation_scenario1(stats):
 		typing("You have a very small stomach with your starvation level of 10, and eating small rations of food is perfect for you.")
 	elif stats["starvation"] <= 5:
 		typing("With a starvation level of %s, you hate eating small rations of food, but you have no choice other than dealing with it." % stats["starvation"])
+		lost_one()
 	elif stats["starvation"] > 5:
 		typing("Your starvation level of %s allows you to not have any problem eating small rations of food." % stats["starvation"])
 
@@ -104,12 +119,13 @@ def starvation_scenario2(stats):
 	clear()
 	typing("As you continue your journey, you realize that you have limited water with you due to the unfortunate budget cuts.")
 	if stats["starvation"] == 0:
-		typing("Your starvation level is 0, and you can't stand your mouth feelig dry, which prevents you from concentrating.")
+		typing("Your starvation level is 0, and you can't stand your mouth feeling dry, which prevents you from concentrating.")
 		lose()
 	elif stats["starvation"] == 10:
 		typing("The starvation level of 10 allows your lack of water to push you forward to achieve your goal.")
 	elif stats["starvation"] <= 5:
 		typing("With a starvation level of %s, you find it very bothersome to ration out your water." % stats["starvation"])
+		lost_one()
 	elif stats["starvation"] > 5:
 		typing("Your starvation level of %s allows you to easily ration out your water." % stats["starvation"])
 	
@@ -126,7 +142,7 @@ def lose():
 	''')
 	typing("Press enter to continue.")
 	input("> ")
-	raise
+	raise ZeroDivisionError
 
 def win():
 	print(r'''
