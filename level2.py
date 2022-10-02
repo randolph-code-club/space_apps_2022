@@ -59,11 +59,16 @@ def second_level():
     image = DrawImage.from_url(image_url, (100, 30))
     image.draw_image()
 
-    typing("Pressure: {}".format(weather_data["pressure"]))
+    typing("Pressure: {} mb".format(weather_data["pressure"]))
     typing("UV Index: {}".format(weather_data["local_uv_irradiance_index"]))
-    typing("Max Temp: {}".format(weather_data["max_temp"]))
-    typing("Min Temp: {}".format(weather_data["min_temp"]))
+    typing("Max Temp: {}°C".format(weather_data["max_temp"]))
+    typing("Min Temp: {}°C".format(weather_data["min_temp"]))
     time.sleep(2)
+    typing("Press Enter to continue")
+    input("> ")
+    clear()
+
+    typing("After a long time in zero gravity, your body ")
 
 if __name__ == "__main__":
     second_level()
