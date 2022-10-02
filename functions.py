@@ -85,11 +85,11 @@ def enrichment_scenario2(stats):
 
 def isolation_scenario1(stats):
 	clear()
-	typing("""You've been on this mission for years now. 
-	You haven't seen any of the people or things you care about for all of that time, and it's starting to seriously get to you.""")
+	typing("""You've been on this mission for months now. 
+You haven't seen any of the people or things you care about for all of that time, and it's starting to seriously get to you.""")
 	if stats["isolation"] == 0:
 		typing("""Your loneliness resistance level of 0 causes you to lose all motivation. 
-		Even upon arrival to the red planet, all you can do is go home.""")
+Even upon arrival to the red planet, all you can do is go home.""")
 		lose()
 	elif stats["isolation"] == 10:
 		typing("However, your loneliness resistance level of 10 seems to increase your determination to complete your mission.")
@@ -98,7 +98,7 @@ def isolation_scenario1(stats):
 		lost_one()
 	elif stats["isolation"] > 5:
 		typing("""Your loneliness resistance level of %s allows you to enjoy yourself alone. 
-		That's not to say you don't miss your loved ones, but you are secure in your knowledge that you'll be able to see them again.""" % stats["isolation"])
+That's not to say you don't miss your loved ones, but you are secure in your knowledge that you'll be able to see them again.""" % stats["isolation"])
 
 def isolation_scenario2(stats):
 	clear()
