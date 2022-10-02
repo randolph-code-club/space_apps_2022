@@ -27,7 +27,8 @@ def main():
     if title_choice == "1" or "play":
         clear()
         stats = char_creation.startup()
-        game(stats)
+        while True:
+            game(stats)
     elif title_choice == "2" or "help":
         clear()
         print("Help TBD")
@@ -45,4 +46,7 @@ def main():
 
 if __name__ == '__main__':
     while True:
-        main()
+        try:
+            main()
+        except:
+            pass # you lost

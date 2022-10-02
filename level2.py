@@ -26,6 +26,7 @@ def second_level():
         if len(image_data["photos"]) > 0:
             image_url = image_data["photos"][0]["img_src"]
             earth_date = image_data["photos"][0]["earth_date"]
+            rover_name = image_data["photos"][0]["rover"]["name"]
 
     # image = DrawImage.from_url(image_url, (100, 30))
     # image.draw_image()
@@ -47,7 +48,7 @@ def second_level():
     typing("You must locate the wallet.")
     time.sleep(1)
     typing("You check the temperature, air pressure, and UV radiation index.")
-    print("Downloading", end = "")
+    print(f"Downloading Data and Imagery from {rover_name} Rover", end = "")
     time.sleep(1)
     print(".", end = "")
     for i in range(2):

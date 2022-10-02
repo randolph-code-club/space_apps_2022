@@ -6,7 +6,7 @@ from functions import starvation_scenario1, starvation_scenario2, enrichment_sce
 
 
 def first_level(stats):
-    possible_levels = [radiation_scenario, isolation_scenario1, isolation_scenario2,
+    possible_levels = [radiation_scenario, radiation_scenario, isolation_scenario1, isolation_scenario2,
     starvation_scenario1, starvation_scenario2, enrichment_scenario1, enrichment_scenario2]
     levels = []
     for i in range(3):

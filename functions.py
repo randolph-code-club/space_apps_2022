@@ -20,8 +20,7 @@ def clear():
 
 def radiation_scenario(stats):
 	clear()
-	typing("Over the time you've been in space thus far, \
-	you've been exposed to enough radiation to notice bodily changes.")
+	typing("Over the time you've been in space thus far, you've been exposed to enough radiation to notice bodily changes.")
 	#maybe add gameplay effects to certain outcomes?
 	#also research the actual effects of radiation, and organisms that resist them (or benefit from them???)
 	if stats["radiation"] == 0:
@@ -71,8 +70,7 @@ def isolation_scenario1(stats):
 	elif stats["isolation"] == 10:
 		typing("However, your loneliness resistance level of 10 seems to increase your determination to complete your mission.")
 	elif stats["isolation"] <= 5:
-		typing("Although you miss your loved ones on Earth, your loneliness resistance level of %s allows you to push through, \
-		with the knowledge that, if you succeed, you will be able to see them again." % stats["isolation"])
+		typing("Although you miss your loved ones on Earth, your loneliness resistance level of %s allows you to push through, with the knowledge that, if you succeed, you will be able to see them again." % stats["isolation"])
 	elif stats["isolation"] > 5:
 		typing("Your loneliness resistance level of %s allows you to enjoy yourself alone. That's not to say you don't miss your loved ones, but you are secure in your knowledge that you'll be able to see them again." % stats["isolation"])
 
@@ -104,7 +102,7 @@ def starvation_scenario1(stats):
 
 def starvation_scenario2(stats):
 	clear()
-	typing("As you continue you journey, you realize that you have limited water with you due to the unfortunate budget cuts.")
+	typing("As you continue your journey, you realize that you have limited water with you due to the unfortunate budget cuts.")
 	if stats["starvation"] == 0:
 		typing("Your starvation level is 0, and you can't stand your mouth feelig dry, which prevents you from concentrating.")
 		lose()
@@ -128,6 +126,7 @@ def lose():
 	''')
 	typing("Press enter to continue.")
 	input("> ")
+	raise
 
 def win():
 	print(r'''
