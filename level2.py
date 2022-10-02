@@ -15,7 +15,7 @@ def second_level():
     while not image_url:
         sol = random.randint(1, 3423)
         api_key = os.environ["NASA_API_KEY"]
-        image_response = requests.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={}&api_key={}".format(sol, api_key))
+        image_response = requests.get(f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={api_key}")
         image_data = image_response.json()
         if len(image_data["photos"]) > 0:
             image_url = image_data["photos"][0]["img_src"]
@@ -24,7 +24,7 @@ def second_level():
     # image = DrawImage.from_url(image_url, (100, 30))
     # image.draw_image()
 
-    weather_response = requests.get("https://api.maas2.apollorion.com/{}".format(sol))
+    weather_response = requests.get(f"https://api.maas2.apollorion.com/{sol}")
     weather_data = weather_response.json()
     
 
