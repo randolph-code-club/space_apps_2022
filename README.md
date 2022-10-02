@@ -16,6 +16,19 @@ The game interprets these hazards as these 5 biological superpowers:
 - ease of happiness in otherwise harsh environments
 Once your character has been created, you follow them on a mission to Mars with three chapters: on the way, there, and back again.
 
-## API Usage
+
+## Libraries Used
+
+We used:
+- [requests](https://pypi.org/project/requests/)
+- [terminal-img](https://pypi.org/project/terminal-img/)
+- [inquirer](https://pypi.org/project/inquirer/)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
+
+## APIs Used
+
+We used:
+- [Mars Rover Photos]()
+- [Mars Weather API]
 
 ## Research Sources
