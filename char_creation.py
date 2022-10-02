@@ -4,6 +4,7 @@ from functions import typing
 import time
 from game import game
 import inquirer
+import random
 
 def startup():
     #Introduction
@@ -52,7 +53,8 @@ def startup():
             f"gravity ({body_retention}/10)",
             f"enrichment ({ease_of_enrichment}/10)",
             "HELP",
-            "RESET"
+            "RESET",
+            "GENERATE"
             ])
         ]
         answer = inquirer.prompt(questions)["stat"]
@@ -66,6 +68,25 @@ def startup():
             starvation_resistance = 0
             body_retention = 0
             ease_of_enrichment = 0
+        elif answer == "GENERATE":
+            points = 25
+            radiation_resistance = 0
+            isolation_resistance = 0
+            starvation_resistance = 0
+            body_retention = 0
+            ease_of_enrichment = 0
+            for i in range(25):
+                choice = random.randint(1, 5)
+                if choice == 1:
+                    radiation_resistance += 1
+                elif choice == 2:
+                    isolation_resistance += 1
+                elif choice == 3:
+                    starvation_resistance += 1
+                elif choice == 4:
+                    body_retention += 1
+                elif choice == 5:
+                    ease_of_enrichment += 1
         else:
             while True:
                 try:

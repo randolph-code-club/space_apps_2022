@@ -5,8 +5,9 @@ from functions import clear, is_level1_completed, is_level2_completed
 import level1
 import level2
 import level3
-
+remaining_scenarios = []
 def game(stats):
+    global remaining_scenarios
     clear()
     typing("Please choose a level by typing the number to begin:")
     print("1) A Beginning")

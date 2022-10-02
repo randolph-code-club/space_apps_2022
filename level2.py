@@ -44,6 +44,7 @@ def second_level(stats):
     typing("You must locate the wallet.")
     time.sleep(1)
     typing("You check the temperature, air pressure, and UV radiation index.")
+    time.sleep(1)
     print(f"Downloading Data and Imagery from {rover_name} Rover", end = "")
     time.sleep(1)
     print(".", end = "")
@@ -80,6 +81,7 @@ def second_level(stats):
     time.sleep(1)
     typing("Press Enter to continue")
     input("> ")
+    clear()
     if count_lost() >= 4:
         lose()
     typing("You decide to exit your spacecraft and walk on the Martian surface to find your wallet.")
