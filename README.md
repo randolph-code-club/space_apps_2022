@@ -41,7 +41,7 @@ screenshot of "you win" screen
 
 ## APIs Used
 
-- [Mars Rover Photos](https://github.com/chrisccerami/mars-photo-api) - Used in [chapter 2](https://github.com/randolph-code-club/space_apps_2022/blob/main/level2.py#L24) to give a bit of visual for Mars
+- [Mars Photos API](https://github.com/chrisccerami/mars-photo-api) - Used in [chapter 2](https://github.com/randolph-code-club/space_apps_2022/blob/main/level2.py#L24) to give a bit of visual for Mars
 - [MAAS2 API](https://maas2.apollorion.com/) - Used in [chapter 2](https://github.com/randolph-code-club/space_apps_2022/blob/main/level2.py#L31) to determine the difficulty of the UV check and to add flavor
 
 ## Research Sources
