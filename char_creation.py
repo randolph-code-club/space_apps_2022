@@ -3,6 +3,7 @@ from functions import clear
 from functions import typing
 import time
 from game import game
+import inquirer
 
 def startup():
     #Introduction
@@ -12,13 +13,10 @@ def startup():
     while name_choosing == "n":
         typing("What would you like to name your character?")
         name = input("> ")
-        typing("Would you like to name your character: %s? (y/n)" % name)
-        name_conformation = ""
-        while name_conformation not in ["y", "n"]:
-            name_conformation = input("> ")
-        if name_conformation == "y":
+        name_conformation = inquirer.prompt([inquirer.Confirm("confirm", message="Would you like to name your character: %s?" % name, default=True)])
+        if name_conformation["confirm"]:
             name_choosing = "y"
-        elif name_conformation == "n":
+        else:
             pass
     clear()
     typing("You have named your superhero %s.\n" % name)
@@ -33,13 +31,13 @@ def startup():
     
     creating = True
     #explanation subject to change
-    explanation = """Your hero will have 5 stats. Each can be anywhere from 0-10, with 0 being the least powerful and 10 being the most. The stats are:
+    explanation = """Your hero, %s, will have 5 stats. Each can be anywhere from 0-10, with 0 being the least powerful and 10 being the most. The stats are:
     - resistance to radiation
     - ability to be alone and stay mentally healthy
     - ability to survive with little nourishment
     - ability to retain bodily health in low/no gravity environments
     - ease of happiness in otherwise harsh environments
-    """
+    """ % name
     typing(explanation)
     while creating:
         typing("You have %s points left to spend.\n" % points)
