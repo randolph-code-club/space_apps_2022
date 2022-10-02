@@ -29,6 +29,6 @@ We used:
 
 We used:
 - [Mars Rover Photos]()
-- [Mars Weather API]
+- [MAAS API]
 
 ## Research Sources
