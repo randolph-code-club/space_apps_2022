@@ -6,6 +6,8 @@ This is a project for [NASA's Space Apps Challenge 2022](https://www.spaceappsch
 
 ## How to play
 
+[Watch the demo video.](https://www.youtube.com/watch?v=zTIxBmZ4KRU)
+
 In this game, the player creates a biological superhero for the all-important purpose of retrieving your wallet from Mars.
 Your character will have 5 stats, based on the [5 Hazards of Human Spaceflight](https://www.nasa.gov/hrp/5-hazards-of-human-spaceflight).
 The game interprets these hazards as these 5 biological superpowers:
